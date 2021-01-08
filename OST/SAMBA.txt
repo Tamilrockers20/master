@@ -1,0 +1,17 @@
+Samba is a free software re-implementation of the SMB/CIFS networking protocol, originally
+developed by Andrew Tridgell. As of version 3, Samba provides file and print services for
+various Microsoft Windows clients and can integrate with a Windows Server domain, either as
+a Primary Domain Controller (PDC) or as a domain member. It can also be part of an Active
+Directory domain.
+Samba can be used with Linux to provide transparent access between systems running Linux and systems
+running Windows. Samba itself runs on a Linux system and makes shared files and printers available to
+Windows system, as if they are available on a Window system or server.
+
+
+
+sudo apt-get install samba
+sudo service smbd status
+sudo service smbd start
+sudo service smbd restart
+sudo ufw allow samba
+

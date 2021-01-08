@@ -1,0 +1,32 @@
+1) sudo apt-get install cmake
+2) mkdir gnumake
+3) cd gnumake
+4) gedit squareroot.c
+5) cc squareroot.c -o squareroot -lm
+6) ./squareroot 25
+
+
+squareroot.c :
+
+#include <stdio.h>
+#include <stdlib.h> #include <math.h>
+int main (int argc, char *argv[])
+{
+if (argc < 2)
+{
+	fprintf(stdout,"Usage: %s number\n",argv[0]); return 1;
+}
+double inputValue = atof(argv[1]); double outputValue = sqrt(inputValue);
+fprintf(stdout,"The square root of %g is %g\n", inputValue, outputValue);
+return 0;
+}
+
+#creating make files :
+
+CC=GCC
+CFLAGS = -G
+LDFLAGS = -LM
+ALL : SQUAREROOT
+SQUAREROOT : SQUAREROOT.O
+SQUAREROOT.O : SQUAREROOT.C
+CLEAN : RM -F SQUAREROOT SQUAREROOT.O

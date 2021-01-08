@@ -1,0 +1,28 @@
+CUPS is a modular printing system for Unix-like computer operating systems which allows a computer to act as a print server. 
+A computer running CUPS is a host that can accept print jobs from client computers, process them, and send them to the appropriate printer.
+
+CUPS consist of a print spooler and scheduler, a filter system that converts the print data to a format that the printer will understand, 
+and a backend  system that  sends this  data  to the print  device.
+CUPS use the Internet Printing Protocol (IPP) as the basis for managing print jobs and queues.
+It also provides the traditional command line interfaces for the System V and Berkeley print systems, and provides support for the Berkeley print system's Line Printer Daemon protocol and limited support for the server message block (SMB) protocol. System administrators can configure the device drivers which CUPS supplies by editing text files in Adobe's PostScript Printer Description (PPD) format. There are a number of user interfaces for different platforms that can configure CUPS, and it has a built-in web-based interface. CUPS is free software, provided under the GNU General Public License and GNU Lesser General Public License, Version 2.
+
+
+Printing within UNIX has historically been done using one of two printing systems – the Berkeley Line Printer Daemon ("LPD") [RFC1179] and the AT&T Line Printer system. These printing systems were designed in the 70's for printing text to line printers; vendors have since added varying levels of support for other types of printers.
+
+
+
+Installing CUPS
+To Install CUPS Enter the Following command as root user
+$ su -
+# yum install cups
+Install the A printer administration tool # yum install system-config-printer Configuring CUPS
+Open the cups by typing following URL http :/ / localhos t :631 /
+
+
+In this click on the Adding Printers and Classes Here click on the Add Printer.
+
+After clicking on the Add Printer It will ask you for permission. Here you have to enter the system root username and password
+
+After setting the options you can see following screen. In this you can see the maintenaince, in that drop down you can delete the printer and also Edit the printer.
+
+Below that you can see the Jobs. In that you can see Jobs you did till now means if you took any print from your machine that status it shows.

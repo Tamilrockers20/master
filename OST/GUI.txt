@@ -1,0 +1,57 @@
+mkdir qthello
+cd qthello
+gedit qthello.cpp
+
+
+
+qmake-qt4 -project
+qmake-qt4
+make
+./qthello
+
+qthello.cpp
+#include <QApplication> 
+#include <QPushButton>
+int main(int argc, char *argv[])
+{
+QApplication app(argc, argv); 
+QPushButton helloButton("Hello World"); 
+helloButton.resize(80, 20); 
+helloButton.show();
+return app.exec();
+}
+
+mymenu.h
+#include <QMainWindow>
+class MyMenu : public QMainWindow
+{
+public:
+MyMenu(QWidget *parent = 0);
+};
+
+mymenu.cpp
+#include "mymenu.h" 
+#include <QMenu>
+#include <QMenuBar>
+#include <QApplication>
+MyMenu::MyMenu(QWidget *parent)
+: QMainWindow(parent)
+{
+//create the quit action object
+QAction *quit = new QAction("&Quit", this);
+//create the file menu QMenu *file;
+file = menuBar()->addMenu("&File");
+//add the quit action to the new menu file->addAction(quit);
+//connect the triggered signal from the quit action menu
+//to the global quit method which closes the application connect(quit, SIGNAL(triggered()), qApp, SLOT(quit()));
+}
+
+
+main.cpp
+#include "mymenu.h" #include <QDesktopWidget> #include <QApplication>
+int main(int argc, char *argv[])
+{
+QApplication app(argc, argv); MyMenu window; window.setWindowTitle("My menu"); window.show();
+return app.exec();
+}
+

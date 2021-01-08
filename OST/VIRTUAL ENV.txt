@@ -1,0 +1,8 @@
+Commands :
+1) sudo apt-get install qemu
+2) apt show qemu-system-x86
+
+Download FREEDOS 
+
+3) qemu-img create virtualdisk.img 100M
+4) qemu -hda virtualdisk.img-cdrom fdbaseed.iso -boot d

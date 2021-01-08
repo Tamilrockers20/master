@@ -1,0 +1,50 @@
+Apache Ant
+Apache Ant is a software tool for automating software build processes. 
+It is similar to Make but is implemented using the Java language, requires the Java platform, and is best suited to building Java projects. 
+The most immediately noticeable difference between Ant and Make is that Ant uses XML to describe the build process and its dependencies, whereas Make uses Makefile format. By default the  XML file is named build.xml. Ant is an Apache project. It is open source software, and is released under the Apache Software License.
+
+
+1) cd build-systems
+2) mkdir ant
+3) cd ant
+4) mkdir -p src/hello
+5) gedit src/hello/HelloWorld.java
+
+
+HelloWorld.java
+
+package hello;
+public class HelloWorld {
+public static void main(String[] args) { System.out.println("Hello World");
+}
+}
+
+6) mkdir -p build/classes
+7) javac -sourcepath src -d build/classes/ src/hello/HelloWorld.java
+8) java -cp build/classes hello.HelloWorld
+9) gedit build.xml 
+
+
+<project>
+<target name="clean">
+<delete dir="build"/>
+</target>
+<target name="compile">
+<mkdir dir="build/classes"/>
+<javac srcdir="src" destdir="build/classes"/>
+</target>
+<target name="jar">
+<mkdir dir="build/jar"/>
+<jar destfile="build/jar/HelloWorld.jar" basedir="build/classes">
+<manifest>
+<attribute name="Main-Class" value="hello.HelloWorld"/>
+</manifest>
+</jar>
+</target>
+<target name="run">
+<java jar="build/jar/HelloWorld.jar" fork="true"/>
+</target>
+</project>
+
+10) ant clean
+11) ant compile jar run
