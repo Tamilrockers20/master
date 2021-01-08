@@ -21,6 +21,12 @@ fprintf(stdout,"The square root of %g is %g\n", inputValue, outputValue);
 return 0;
 }
 
+7) gedit Makefile
+8) make
+9) make clean
+10) cc squareroot.c -o squareroot -lm
+11) ./squareroot 82
+
 #creating make files :
 
 CC=GCC
